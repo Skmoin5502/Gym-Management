@@ -121,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "Hey, there!",
+                      "Welcome to StrengthSync !",
                       style:
                           TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
                     ),
