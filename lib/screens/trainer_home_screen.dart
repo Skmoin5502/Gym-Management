@@ -18,28 +18,55 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
   int myIndex = 0;
 
   late List<Widget> content = [
-   const Text("Trainer Screen"),
-  const Text("Demo Screen"),
+    const Text("Trainer Screen"),
+    const Text("Demo Screen"),
     Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Profile Screen"),
-        ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.lightGreenAccent),
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginScreen()),
-              );
-            },
-            child: Text(
-              "Log out",
+        // Profile picture from assets
+        Container(
+          width: 200,
+          height: 200,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            image: DecorationImage(
+              image: AssetImage('assets/trainer.jpg'), // Path to your profile image asset
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        // Logout text and button
+        Column(
+          children: [
+            const SizedBox(height: 20), // Add some space between profile picture and logout text
+            Text(
+              "Profile Screen",
               style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.lightGreenAccent,
+              ),
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                );
+              },
+              child: Text(
+                "Log out",
+                style: TextStyle(
                   color: Colors.grey[900],
                   fontSize: 13,
-                  fontWeight: FontWeight.w900),
-            ))
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+            ),
+          ],
+        ),
       ],
     ),
   ];
