@@ -75,6 +75,8 @@ flutter:
     #muscles
     - assets/logo.png
     - assets/default.png
+    - assets/trainer.jpg
+    - assets/member.jpg
     - assets/muscles/
     - assets/exercises/Chest/
     - assets/exercises/Back/
