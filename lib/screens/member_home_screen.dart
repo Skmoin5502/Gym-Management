@@ -1,3 +1,4 @@
+// import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:gym_management_2/screens/exercise_screen.dart';
 import 'package:gym_management_2/screens/login_form.dart';
@@ -21,28 +22,54 @@ class _MemberHomeScreenState extends State<MemberHomeScreen> {
     const ExerciseScreen(),
     Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text("Profile Screen"),
-        ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.lightGreenAccent),
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginScreen()),
-              );
-            },
-            child: Text(
-              "Log out",
-              style: TextStyle(
-                  color: Colors.grey[900],
-                  fontSize: 13,
-                  fontWeight: FontWeight.w900),
-            ))
-      ],
+  children: [
+  // Profile picture from assets
+  Container(
+  width: 200,
+  height: 200,
+  decoration: BoxDecoration(
+  shape: BoxShape.circle,
+  image: DecorationImage(
+  image: AssetImage('assets/member.jpg'), // Path to your profile image asset
+  fit: BoxFit.cover,
+  ),
+  ),
+  ),
+  // Logout text and button
+  Column(
+    children: [
+      const SizedBox(height: 20), // Add some space between profile picture and logout text
+      Text(
+        "Profile Screen",
+        style: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.lightGreenAccent,
+        ),
+        onPressed: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const LoginScreen()),
+          );
+        },
+        child: Text(
+          "Log out",
+          style: TextStyle(
+            color: Colors.grey[900],
+            fontSize: 13,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+      ),
+    ],
+  ),
+  ],
     ),
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
