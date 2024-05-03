@@ -30,8 +30,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   firebase_core: ^2.28.0
@@ -51,6 +49,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -78,6 +77,7 @@ flutter:
     - assets/trainer.jpg
     - assets/member.jpg
     - assets/muscles/
+    - assets/diets/
     - assets/exercises/Chest/
     - assets/exercises/Back/
     - assets/exercises/Abs/
