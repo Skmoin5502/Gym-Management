@@ -6,36 +6,50 @@ import '../muscles_exercises/chest_exercise_screen.dart';
 import '../muscles_exercises/legs_exercise_screen.dart';
 import '../muscles_exercises/shoulder_exercise_screen.dart';
 import '../muscles_exercises/triceps_exercise_screen.dart';
+import '../screens/diet_screen.dart'; // Import the diet screen file
 import 'muscle_tile.dart';
 
 class ExerciseScreen extends StatelessWidget {
-  const ExerciseScreen({super.key});
+  const ExerciseScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Muscles'),
+        title: const Text('Muscles And Diets'),
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             MuscleTile(
-              muscleName: 'Chest',
-              imagePath: 'assets/muscles/chest.jpg',
+              muscleName: 'Diet',
+              imagePath: 'assets/diets/diet.cms', // Add the path to the diet image
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ChestExerciseScreen(
-                      muscleName: 'Chest',
-                      imagePath: 'assets/muscles/chest.jpg',
-                    ),
+                    builder: (context) => const DietScreen(), // Navigate to the diet screen
                   ),
                 );
               },
             ),
+          MuscleTile(
+            muscleName: 'Chest',
+            imagePath: 'assets/muscles/chest.jpg',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ChestExerciseScreen(
+                    muscleName: 'Chest',
+                    imagePath: 'assets/muscles/chest.jpg',
+                  ),
+                ),
+              );
+            },
+          ),
+
             MuscleTile(
               muscleName: 'Biceps',
               imagePath: 'assets/muscles/biceps.jpg',
@@ -90,7 +104,7 @@ class ExerciseScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => const ShoulderExerciseScreen(
                       muscleName: 'Shoulders',
-                      imagePath: 'assets/muscles/Shoulders.jpg',
+                      imagePath: 'assets/muscles/shoulders.jpg',
                     ),
                   ),
                 );
